@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Legal Sphere - Case and Document Task Manager</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+<header> 
+    <div> 
+        <h1>LEGAL <span>SPHERE</span></h1> 
+        <p>Legal Advisory and Documentation Management</p> 
+    </div> 
+    <div id="today"></div> 
+</header> 
+ 
+<main> 
+    <section class="cards"> 
+        <div class="card"> 
+            <div class="number" id="totalCount">0</div> 
+            <div class="label">Total Tasks</div> 
+        </div> 
+        <div class="card pendingCard"> 
+            <div class="number" id="pendingCount">0</div> 
+            <div class="label">Pending</div> 
+        </div> 
+        <div class="card doneCard"> 
+            <div class="number" id="doneCount">0</div> 
+            <div class="label">Completed</div> 
+        </div> 
+        <div class="card overdueCard"> 
+            <div class="number" id="overdueCount">0</div> 
+            <div class="label">Overdue</div> 
+        </div> 
+    </section> 
+ 
+    <section class="panel"> 
+        <h2>Add New Task</h2> 
+        <div class="grid"> 
+            <div class="field"> 
+                <label for="clientInput">Client Name *</label> 
+                <input type="text" id="clientInput" placeholder="e.g. Ravi Kumar"> 
+            </div> 
+            <div class="field"> 
+                <label for="titleInput">Task Title *</label> 
+                <input type="text" id="titleInput" placeholder="e.g. Draft rental agreement"> 
+            </div> 
+            <div class="field"> 
+                <label for="categoryInput">Service Type</label> 
+                <select id="categoryInput"> 
+                    <option value="Legal Advisory">Legal Advisory</option> 
+                    <option value="Documentation">Documentation</option> 
+                </select> 
+            </div> 
+ 
+ 
+            <div class="field"> 
+                <label for="areaInput">Area of Law</label> 
+                <select id="areaInput"> 
+                    <option>Property Law</option> 
+                    <option>Family Law</option> 
+                    <option>Corporate Law</option> 
+                    <option>Consumer Law</option> 
+                    <option>Employment Law</option> 
+                    <option>Criminal Law</option> 
+                    <option>Intellectual Property</option> 
+                </select> 
+            </div> 
+            <div class="field"> 
+                <label for="docInput">Document Type</label> 
+                <select id="docInput"> 
+                    <option>Not Applicable</option> 
+                    <option>Rental Agreement</option> 
+                    <option>Sale Deed</option> 
+                    <option>Affidavit</option> 
+                    <option>Legal Notice</option> 
+                    <option>Power of Attorney</option> 
+                    <option>NDA</option> 
+                    <option>Will</option> 
+                    <option>Partnership Deed</option> 
+                </select> 
+            </div> 
+            <div class="field"> 
+                <label for="priorityInput">Priority</label> 
+                <select id="priorityInput"> 
+                    <option value="high">High</option> 
+                    <option value="medium" selected>Medium</option> 
+                    <option value="low">Low</option> 
+                </select> 
+            </div> 
+            <div class="field"> 
+                <label for="dateInput">Due Date</label> 
+                <input type="date" id="dateInput"> 
+            </div> 
+            <div class="field full"> 
+                <label for="notesInput">Notes</label> 
+                <textarea id="notesInput" placeholder="Short notes about the case or 
+document"></textarea> 
+            </div> 
+        </div> 
+        <div class="error" id="errorMsg"></div> 
+        <button class="goldBtn" id="addBtn">Add Task</button> 
+    </section> 
+ 
+    <section class="panel"> 
+        <h2>Task Register</h2> 
+        <div class="toolbar"> 
+            <input type="text" id="searchInput" placeholder="Search by client, title or case ID"> 
+            <select id="sortInput"> 
+                <option value="newest">Sort: Newest First</option> 
+                <option value="date">Sort: Due Date</option> 
+                <option value="priority">Sort: Priority</option> 
+            </select> 
+ 
+            <button id="clearBtn">Clear Completed</button> 
+        </div> 
+        <div class="tabs"> 
+            <button class="filterBtn active" data-filter="all">All</button> 
+            <button class="filterBtn" data-filter="pending">Pending</button> 
+            <button class="filterBtn" data-filter="completed">Completed</button> 
+            <button class="filterBtn" data-filter="overdue">Overdue</button> 
+            <button class="filterBtn" data-filter="Legal Advisory">Advisory</button> 
+            <button class="filterBtn" data-filter="Documentation">Documentation</button> 
+        </div> 
+        <ul id="taskList"></ul> 
+    </section> 
+ 
+    <p class="disclaimer"> 
+        Academic project for learning DOM manipulation. Do not enter real confidential client data. 
+    </p> 
+</main> 
+ 
+<script src="script.js"></script> 
+</body> 
+</html> 
